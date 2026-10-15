@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 from pathlib import Path
 import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 import os
@@ -26,7 +27,7 @@ STATICFILES_DIRS = [
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'your_default_secret_key')
+SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-default-secret-key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = "RENDER " not in os.environ  # Set DEBUG to False on Render
@@ -52,7 +53,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    "django.middleware.locale.WhiteNoiseMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
