@@ -1,15 +1,101 @@
-{%load static %}
+```html
+{% extends 'portfolio/base.html' %}
+{% load static %}
+
+{% block title %}Головна — Моє портфоліо{% endblock %}
+
 {% block content %}
-<div class="container mt-5">
-    <div class="text-center mb-4">
-        <img src="{% static 'images/2 фото.jpg' %}" alt="Profile Picture" class="rounded-circle mx-auto d-block" width="150" height="150">
+
+<section class="hero-section" id="about">
+    <div class="hero-text">
+        <p class="eyebrow">Вітаю на моїй сторінці!</p>
+
+        <h1>Привіт, я <span>Андрій</span></h1>
+
+        <h2>Майбутній фахівець у сфері ІТ</h2>
+
+        <p class="hero-description">
+            Це моє особисте портфоліо, де я розповідаю про себе,
+            свої захоплення та проєкти. Тут ти можеш дізнатися
+            більше про мене й знайти мої соціальні мережі.
+        </p>
+
+        <a class="main-button" href="#contacts">Мої контакти</a>
     </div>
-    <div class="jumbotron text-center">
-        <h1 class="display-4">Hello, I'm Andrey Kochkar!</h1>
-        <p class="lead">Welcome to my personal portfolio website.</p>
-        <hr class="my-4">
-        <p>Explore my projects, skills, and more.</p>
-        <a class="btn btn-primary btn-lg" href="{% url 'projects' %}" role="button">View Projects</a>
+
+    <div class="hero-image">
+        <div class="image-orbit"></div>
+        <img src="{% static 'images/2 фото.jpg' %}"
+             alt="Моє фото"
+             class="profile-image">
     </div>
-</div>
+</section>
+
+<section class="content-section" id="projects">
+    <div class="section-heading">
+        <p class="eyebrow">Трохи про мене</p>
+        <h2>Мої захоплення</h2>
+    </div>
+
+    <div class="row g-4">
+        <div class="col-md-4">
+            <article class="info-card">
+                <div class="card-icon">💻</div>
+                <h3>Технології</h3>
+                <p>
+                    Цікавлюся програмуванням, комп’ютерами
+                    та створенням власних проєктів.
+                </p>
+            </article>
+        </div>
+
+        <div class="col-md-4">
+            <article class="info-card">
+                <div class="card-icon">🏎️</div>
+                <h3>Формула-1</h3>
+                <p>
+                    Стежу за перегонами, командами
+                    та найцікавішими подіями автоспорту.
+                </p>
+            </article>
+        </div>
+
+        <div class="col-md-4">
+            <article class="info-card">
+                <div class="card-icon">⚽</div>
+                <h3>Спорт</h3>
+                <p>
+                    Люблю футбол, плавання та теніс.
+                    Ціную активний відпочинок.
+                </p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="content-section contacts-section" id="contacts">
+    <div class="section-heading">
+        <p class="eyebrow">Знайдемо спільну мову</p>
+        <h2>Мої соціальні мережі</h2>
+        <p>Підписуйся та стеж за моїми оновленнями!</p>
+    </div>
+
+    <div class="social-links">
+        <a href="https://github.com/Zevsandrey2010/Zevs"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="social-button">
+            GitHub
+        </a>
+
+        <a href="https://www.tiktok.com/@bravo_792"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="social-button">
+            TikTok
+        </a>
+    </div>
+</section>
+
 {% endblock %}
+```
