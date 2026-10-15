@@ -1,101 +1,94 @@
-```html
+
 {% extends 'portfolio/base.html' %}
 {% load static %}
 
-{% block title %}Головна — Моє портфоліо{% endblock %}
+{% block title %}Головна — Портфоліо Андрія{% endblock %}
 
 {% block content %}
 
-<section class="hero-section" id="about">
+<section class="hero-section">
     <div class="hero-text">
-        <p class="eyebrow">Вітаю на моїй сторінці!</p>
+        <p class="eyebrow">ПЕРСОНАЛЬНЕ ПОРТФОЛІО</p>
 
         <h1>Привіт, я <span>Андрій</span></h1>
-
-        <h2>Майбутній фахівець у сфері ІТ</h2>
+        <h2>Вивчаю ІТ та створюю власні проєкти</h2>
 
         <p class="hero-description">
-            Це моє особисте портфоліо, де я розповідаю про себе,
-            свої захоплення та проєкти. Тут ти можеш дізнатися
-            більше про мене й знайти мої соціальні мережі.
+            Мені цікаві програмування, веброзробка й технології.
+            Тут зібрані мої навички, проєкти та те, чого я навчаюся.
         </p>
 
-        <a class="main-button" href="#contacts">Мої контакти</a>
+        <div class="hero-actions">
+            <a class="main-button" href="{% url 'projects' %}" data-page-link>
+                Переглянути проєкти ↗
+            </a>
+
+            <a class="secondary-button" href="{% url 'about' %}" data-page-link>
+                Дізнатися про мене
+            </a>
+        </div>
+
+        <div class="hero-tags">
+            <span>Python</span>
+            <span>Django</span>
+            <span>HTML / CSS</span>
+            <span>GitHub</span>
+        </div>
     </div>
 
     <div class="hero-image">
         <div class="image-orbit"></div>
-        <img src="{% static 'images/2 фото.jpg' %}"
-             alt="Моє фото"
-             class="profile-image">
+
+        <div class="image-frame">
+            <img src="{% static 'images/2 фото.jpg' %}"
+                 alt="Фото Андрія"
+                 class="profile-image">
+        </div>
+
+        <div class="floating-note">
+            Навчаюся · Практикуюся · Розвиваюся
+        </div>
     </div>
 </section>
 
-<section class="content-section" id="projects">
+<section class="content-section">
     <div class="section-heading">
-        <p class="eyebrow">Трохи про мене</p>
-        <h2>Мої захоплення</h2>
+        <p class="eyebrow">НАВІГАЦІЯ</p>
+        <h2>Зазирни в моє портфоліо</h2>
+        <p>Обери розділ, який хочеш переглянути.</p>
     </div>
 
     <div class="row g-4">
         <div class="col-md-4">
-            <article class="info-card">
+            <a class="info-card card-link"
+               href="{% url 'about' %}" data-page-link>
+                <div class="card-icon">👋</div>
+                <h3>Про мене</h3>
+                <p>Мої інтереси, захоплення та цілі.</p>
+                <span class="card-arrow">Детальніше ↗</span>
+            </a>
+        </div>
+
+        <div class="col-md-4">
+            <a class="info-card card-link"
+               href="{% url 'projects' %}" data-page-link>
                 <div class="card-icon">💻</div>
-                <h3>Технології</h3>
-                <p>
-                    Цікавлюся програмуванням, комп’ютерами
-                    та створенням власних проєктів.
-                </p>
-            </article>
+                <h3>Мої проєкти</h3>
+                <p>Сайти та навчальні роботи, над якими я працюю.</p>
+                <span class="card-arrow">Переглянути ↗</span>
+            </a>
         </div>
 
         <div class="col-md-4">
-            <article class="info-card">
-                <div class="card-icon">🏎️</div>
-                <h3>Формула-1</h3>
-                <p>
-                    Стежу за перегонами, командами
-                    та найцікавішими подіями автоспорту.
-                </p>
-            </article>
+            <a class="info-card card-link"
+               href="{% url 'skills' %}" data-page-link>
+                <div class="card-icon">⚡</div>
+                <h3>Навички</h3>
+                <p>Технології та інструменти, які я вивчаю.</p>
+                <span class="card-arrow">Переглянути ↗</span>
+            </a>
         </div>
-
-        <div class="col-md-4">
-            <article class="info-card">
-                <div class="card-icon">⚽</div>
-                <h3>Спорт</h3>
-                <p>
-                    Люблю футбол, плавання та теніс.
-                    Ціную активний відпочинок.
-                </p>
-            </article>
-        </div>
-    </div>
-</section>
-
-<section class="content-section contacts-section" id="contacts">
-    <div class="section-heading">
-        <p class="eyebrow">Знайдемо спільну мову</p>
-        <h2>Мої соціальні мережі</h2>
-        <p>Підписуйся та стеж за моїми оновленнями!</p>
-    </div>
-
-    <div class="social-links">
-        <a href="https://github.com/Zevsandrey2010/Zevs"
-           target="_blank"
-           rel="noopener noreferrer"
-           class="social-button">
-            GitHub
-        </a>
-
-        <a href="https://www.tiktok.com/@bravo_792"
-           target="_blank"
-           rel="noopener noreferrer"
-           class="social-button">
-            TikTok
-        </a>
     </div>
 </section>
 
 {% endblock %}
-```
